@@ -7,14 +7,15 @@ import matplotlib.pyplot as plt
 import datetime
 #a
 # Configurar la página
-st.set_page_config(page_title="VaR y CVaR de Portafolio", layout="wide")
-st.title("📉 Análisis de Riesgo: VaR y CVaR de un Portafolio de Acciones")
+st.set_page_config(page_title="PORTAFOLIO DE ACCIONES", layout="wide")
+st.title("EJERCICIO ACTIVIDAD")
 
 # Opciones de portafolios
 portfolios = {
-    "META & GOOGL": (["META", "GOOGL"], [0.5, 0.5]),
-    "AAPL & MSFT": (["AAPL", "MSFT"], [0.5, 0.5]),
+    "META & TSLA": (["META", "TSLA"], [0.5, 0.5]),
+    "AAPL & TSLA": (["AAPL", "TSLA"], [0.5, 0.5]),
     "TSLA & AMZN": (["TSLA", "AMZN"], [0.5, 0.5]),
+    "META & AMZN": (["META", "AMZN"], [0.5, 0.5]),
 }
 
 # Selección del portafolio
@@ -48,7 +49,7 @@ mc_VaR = np.percentile(simulated_returns, tail_prob * 100)
 historical_CVaR = portfolio_returns[portfolio_returns <= historical_VaR].mean()
 
 # Mostrar resultados
-st.subheader("📊 Resultados de Riesgo")
+st.subheader("Resultados")
 st.write(f"Portafolio: **{selected_portfolio}** ({confidence_level*100:.0f}% confianza)")
 st.write(f"- **VaR Histórico**: {historical_VaR:.4%}")
 st.write(f"- **VaR Paramétrico**: {parametric_VaR:.4%}")
