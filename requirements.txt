@@ -1,0 +1,13 @@
+streamlit
+watchdog
+openpyxl
+pandas
+numpy
+matplotlib
+plotly
+openai
+pypdf2
+python-dotenv
+yfinance
+scipy
+#Libs
